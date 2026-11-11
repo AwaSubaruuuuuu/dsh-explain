@@ -1,0 +1,43 @@
+{
+  "name": "dsh-explain",
+  "version": "0.1.0",
+  "description": "Select text in a DSH answer to highlight it, or ask for an explanation in a side panel without touching the main conversation.",
+  "type": "module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AwaSubaruuuuuu/dsh-explain.git"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "highlight",
+    "explain"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}
